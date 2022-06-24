@@ -1,0 +1,24 @@
+- hosts: test
+  tasks:
+          - package:
+                  name: httpd
+                  state: present
+            vars:
+                    - ansible_python_interpreter: /usr/bin/python
+            register: p
+          - copy:
+                  src: hi.html
+                  dest: /var/www/html
+            ignore_errors: yes
+            register: c
+            notify: service
+          - command: echo "hi"
+  handlers:
+          - name: service
+            service:
+                  name: httpd
+                  state: started     
+
+
+
+
