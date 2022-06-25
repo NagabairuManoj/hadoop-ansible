@@ -7,3 +7,5 @@
 3. master.yml :- For creating the whole Hadoop master setup
 
 4. test.yml :- This is for creating the Hadoop slaves and to connect them to the master.
+
+5. ip.txt:- from which ansible will take IP addresses of the instances that it has to be configured 
